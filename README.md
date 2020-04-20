@@ -61,7 +61,6 @@ First task is to combine transaction, demographic and offer data to determine wh
 - Millennials, or Generation Y (18 – 34 years old)
 - Generation Z, or iGeneration (Teens & younger)
  
- f
  ## Analysis questions
  Following the CRISP-DM process this project will find solutions to the following questions
 

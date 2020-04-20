@@ -203,7 +203,51 @@ def clean_portfolio(datapp):
     return vectdata
 
 #     2b. Join datasets
+def data_merger(data1, data22, data33):
+    """The data_merger function will merge the datasets
+    
+    Inputs:
+        data1 (DataFrame)
+        data22 (DataFrame)
+        data33 (DataFrame)
+        
+    
+    Output:
+        data4 (DataFrame) : Merged dataset
+        
+    
+    """
+    
+    # clean raw  datasets
+    # clean transcripts dataset
+    data1_clean = clean_transact(data1)
+    
+    # clean profile dataset
+    data2 = profile_cleaner(data22)
+    
+    # clean portfolio dataset
+    data3 = clean_portfolio(data33)
+    
+    # update the id column name to p_id
+    # profile had a column named id
+    # this will give error on merging the datasets
+    data3.rename(columns = {'id':'p_id'}, inplace = True) 
+    
+    
+    # merge cleaned trascript and profile datasets
+    data4 = pd.merge(data1_clean, data2, how="outer", left_on ="person", right_on="id")
+    
+    # merge data4 with cleaned portfolio dataset
+    data5 = pd.merge(data4, data3, how="outer", left_on ="offer_id", right_on="p_id")
+    
+    
+    # drop duplicate columns
+    data5.drop(columns=["offer_id_values", "id", "p_id"], inplace=True)
+    
+    return data5
 
+
+clean_data = data_merger(transcript, profile, portfolio)
 
 #     4. Exploratory and explanatory data analysis
 #     5. Data visualization

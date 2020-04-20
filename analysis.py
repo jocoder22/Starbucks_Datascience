@@ -251,6 +251,8 @@ clean_data.head()
 exam_understand(clean_data)
 clean_data.agegroups.value_counts()
 
+
+
 #     4. Exploratory and explanatory data analysis
 #           a. Missing data analysis
 # analyse missing gender
@@ -300,7 +302,6 @@ missing_income_gender.age.describe()
 
 
 # Working with complete, non-missing dataset
-
 data = clean_data[~clean_data['gender'].isna()]
 data.event.value_counts()
 exam_understand(data)
@@ -310,6 +311,53 @@ data = data.fillna({'reward': 99 ,'difficulty':99, 'offer_type':'No_offer',
                     'Channel_email':0, 'Channel_mobile':0, 'Channel_social':0})
 data.info()
 data['gender'].value_counts()
+
+
+def col_encoder(data, x):
+    """The col_encoder function maps the long string column values to simple number string
+    
+    Input:
+        data (DataFrame): the dataframe to encode
+        x (string): column to recode
+        
+        
+    Output:
+        person_encoded (list) : list of encoded number string
+        
+    """
+    
+    # instantiate dictionary lookup 
+    codedict = dict()
+    
+    # instantiate numeric counter
+    counter = 1
+    
+    # instantiate a holding list
+    col_encoded = []
+    
+    
+    # loop through the data column
+    for val in data[x]:
+        if val not in codedict:
+            codedict[val] = counter
+            col_encoded.append(codedict[val])
+            counter+=1
+        else:
+            col_encoded.append(codedict[val]) 
+            
+       
+    return col_encoded
+
+person_encoded = col_encoder(data, "person")
+offer_encoded = col_encoder(data, "offer_id")
+
+
+data.insert(1, 'user_id', person_encoded)
+
+data.insert(3 , 'offer_id2', offer_encoded)
+
+# show header
+data.head()  
 
 #     5. Data visualization
 

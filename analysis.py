@@ -286,9 +286,11 @@ missing_income_gender.age.describe()
 # From the analysis above, members missing gender data also had missing income data.
 # Looking carefully at the age for members with missing gender and income data, the mean, max, median, 25% 
 # and 75% percentiles are the same, 118 years with standard deviation of 0.0. Therefore,
-# Apart from the age of 118 years being questionable; all 2172 user had the same age, 118 years.
-# I can conclude that the missing entries in the data is not random.
-# I can conclude that those missing income,age and gender data wouldn't contribute much information toward our analysis.
+        # Apart from the age of 118 years being questionable; all 2172 user had the same age, 118 years.
+        # Also, many of those missing gender and income data were transaction (1303) with few receiving an offer (872) 
+        # but none of them ever viewed or completed the offer.
+        # I can conclude that the missing entries in the data is not random.
+        # I can conclude that those missing income,age and gender data wouldn't contribute much information toward our analysis.
 # Missing reward, difficulty, duration, offer_type, offerType2, Channel_email, Channel_mobile, Channel_social, Channel_web 
 # are associated with features of offer. Therefore, they are missing if user didn't receive an offer. 
 # Also, for user with missing data on these variable, the event recorded is only transaction, 

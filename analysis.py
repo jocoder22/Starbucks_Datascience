@@ -27,7 +27,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 import datetime as dt
-from sklearn.feature_extraction.text import CountVectorizer    
+from sklearn.feature_extraction.text import CountVectorizer  
+
+bcolor = sns.color_palette()[0]
+
+# read in the json files
+portfolio = pd.read_json('data/portfolio.json', orient='records', lines=True)
+profile = pd.read_json('data/profile.json', orient='records', lines=True)
+transcript = pd.read_json('data/transcript.json', orient='records', lines=True)
     
 # C. Data preparation
 #     1. Clean datasets

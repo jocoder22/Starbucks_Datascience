@@ -1,5 +1,5 @@
 ################# Analysis PLan #######################
-            NewYork_Airbnb
+             Starbuck Project
         Writing a Data Scientist Blog Post
     In patial fulfillment of award of degree
             Data Science Nanodegree

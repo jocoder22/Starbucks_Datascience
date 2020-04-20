@@ -60,6 +60,16 @@ First task is to combine transaction, demographic and offer data to determine wh
 - Generation X (Roughly 35 – 50 years old)
 - Millennials, or Generation Y (18 – 34 years old)
 - Generation Z, or iGeneration (Teens & younger)
+
+ ## GitHub files
+ * analysis_plan.txt
+    - Plain text file that lays out Cross-Industry Standard Process of Data Mining - (CRISP-DM) for this project
+  
+ * analysis.ipynb
+    - Jupyter notebook with python codes used in this project
+    
+ * clean.csv
+    - csv file contained cleaned dataset ready for analysis
  
  ## Analysis questions
  Following the CRISP-DM process this project will find solutions to the following questions

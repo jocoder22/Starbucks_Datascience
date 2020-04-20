@@ -38,6 +38,27 @@ transcript = pd.read_json('data/transcript.json', orient='records', lines=True)
     
 # C. Data preparation
 #     1. Examine and understand the datasets
+
+def exam_understand(dataset):
+    """The exam_understand function print out the head, info and shape of dataset
+    
+    Args:
+        dataset (DataFrame)
+        
+    Outputs:
+        
+    
+    """
+    
+    sp = {"sep":"\n\n", "end":"\n\n"}
+    
+    print(dataset.head(),dataset.info(),dataset.shape,dataset.decribe(), **sp)
+    
+exam_understand(portfolio) 
+exam_understand(profile) 
+exam_understand(transcript) 
+transcript['event'].value_counts()
+
 #     2. Clean and join datasets
 #     3. Features extraction and engineering
 #     4. Exploratory and explanatory data analysis

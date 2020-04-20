@@ -17,7 +17,7 @@
 
 # B. Data Understanding
 #     1. Seek for relevant datasets
-#     2. Download relevant datasets
+#     2. Read/Download relevant datasets
     
     
 #   import modules and libraries
@@ -41,6 +41,10 @@ transcript = pd.read_json('data/transcript.json', orient='records', lines=True)
 #     2. Features extraction and engineering
 #     3. Exploratory data analysis
 #     4. Data visualization
+
+
+
+
 # D. Modeling
 #     1. Supervised learning
 # E. Deployment

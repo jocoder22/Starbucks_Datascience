@@ -141,7 +141,7 @@ def profile_cleaner(dat):
     #     - Millennials, or Generation Y (18 – 34 years old)
     #     - Generation Z, or iGeneration (Teens & younger)
     
-    profile2["agegroups"] = pd.cut(profile2.age, bins=[18,34,50,70, profile2.age.max()],
+    profile2["agegroups"] = pd.cut(profile2.age, bins=[18,34,50,70, profile2.age.max()+1],
                                    labels=[ "millennials", "genX", "babyboomer","elderlyadult"],
                                   right=False)
     
@@ -253,6 +253,19 @@ exam_understand(clean_data)
 clean_data.agegroups.value_counts()
 
 #     4. Exploratory and explanatory data analysis
+#           a. Missing data analysis
+# analyse missing gender
+missing_gender = clean_data[clean_data['gender'].isna()]
+missing_gender.event.value_counts()
+missing_gender.head()
+missing_gender.shape, missing_gender.person.nunique()
+
+# analyse missing income
+missing_income = clean_data[clean_data['income'].isna()]
+missing_income.event.value_counts()
+missing_income.head()
+missing_income.shape, missing_income.person.nunique()
+
 #     5. Data visualization
 
 

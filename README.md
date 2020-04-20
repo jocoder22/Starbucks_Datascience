@@ -61,15 +61,14 @@ First task is to combine transaction, demographic and offer data to determine wh
 - Millennials, or Generation Y (18 – 34 years old)
 - Generation Z, or iGeneration (Teens & younger)
 
+
  ## GitHub files
  * analysis_plan.txt
     - Plain text file that lays out Cross-Industry Standard Process of Data Mining - (CRISP-DM) for this project
   
- * analysis.ipynb
-    - Jupyter notebook with python codes used in this project
+ * analysis.py
+    - Python script with codes used in this project
     
- * clean.csv
-    - csv file contained cleaned dataset ready for analysis
  
  ## Analysis questions
  Following the CRISP-DM process this project will find solutions to the following questions
@@ -95,7 +94,7 @@ Find jupyter notebook [here](https://github.com/jocoder22/NewYork_Airbnb/blob/ma
 * Prices of listings on average are higher in Manhattan compared to other Boroughs in New York City. Prices of private rooms is $140 in Manhattan, more than double the price in The Bronx, Staten Island and Queens.
 
 ## Github repository 
-Github repository at this [link](https://github.com/jocoder22/NewYork_Airbnb) to see code and data wrangling/modeling techniques.
+Github repository at this [link](https://github.com/jocoder22/Starbucks_Datascience)
 
 ## blog post 
 See blog post at this [link](https://medium.com/@okigbookey/special-new-york-city-airbnb-rooms-made-for-you-4699a4584144) 

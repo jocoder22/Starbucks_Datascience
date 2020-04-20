@@ -1,18 +1,17 @@
 # Cross-Industry Standard Process of Data Mining - (CRISP-DM)
 # A. Bussiness Understanding                 
 #     1. Formulate research/analysis question(s)
-    
-#            Question I
-#                 Which demographic groups respond best to which offer type?
-#                         Analyzing the response rate of each gender and age groups.
-#             Question II
+#             Question I
 #                 Who is the typical Starbucks rewards mobile app user?
 #                         Analysis of descriptive statistics of all variables in the dataset.
+    
+#            Question II
+#                 Which demographic groups respond best to which offer type?
+#                         Analyzing the response rate of each gender and age groups.
+
 #             Question III
 #                 Who will response to an offer?
 #                         Build a model that predicts whether or not someone will respond to an offer.
-
-
 
 
 # B. Data Understanding

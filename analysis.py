@@ -411,6 +411,144 @@ t = pd.CategoricalDtype(categories= ordering_, ordered=True)
 devent["event"] = devent["event"].astype(t)
 devent.event.value_counts()
 
+
+# # Get listing percentage of offer events
+# Analyzing the distribution of offer events.
+offerevents_p = devent["event"].value_counts(normalize=True) * 100
+offerevents_count = devent["event"].value_counts() 
+print("\n\n\n\nOffer events Percentages :", offerevents_p, "\n\n\n\nOffer events Raw counts" , 
+      offerevents_count, sep="\n" )
+
+
+
+  
+# Plot the distribution of offer events
+plt.figure(figsize=[10,8])
+sns.barplot(x = offerevents_p.index, y= offerevents_p.values,  color = bcolor,   edgecolor="#2b2b28")
+plt.xlabel("Event")
+plt.ylabel("Percentage of members")
+plt.title("Starbucks Offer Events Distribution")
+plt.tight_layout()
+plt.show()
+
+
+# # get the counts of offer events across  and within gender
+hh = pd.crosstab(data2["event"], data2["gender"], normalize="index", margins = True).fillna(0) * 100
+hh2 = pd.crosstab(data2["event"], data2["gender"],  margins = True).fillna(0)
+hht = pd.crosstab(data2["event"], data2["gender"], normalize="all").fillna(0) * 100
+print("\n\n\n\noffer events across gender Percentages :", hh, " \n\n\n\noffer events across gender Raw counts" , hh2,
+        " \n\n\n\nroom_types per bourough Raw counts", hht , sep="\n")
+
+
+# # Plot the distribution of offer within gender
+hh.plot.bar(stacked=True, cmap='Blues_r', figsize=(10,7), edgecolor=["#2b2b28", "#2b2b28", "#2b2b28"])
+plt.xticks(rotation=0)
+plt.xlabel("offer events within gender")
+plt.ylabel("Percent")
+plt.xticks([0,1,2],['offer received','No offer', 'All Users'])
+plt.title("  Starbucks Offer Events Distribution")
+plt.tight_layout()
+plt.show()
+
+
+# RdBu_r, PuBu_r
+# # Plot the distribution of offer across gender
+hht.plot.bar(stacked=True, cmap='Blues', figsize=(10,7), edgecolor=["#2b2b28", "#2b2b28"])
+plt.xticks(rotation=0)
+plt.xlabel("offer events across gender")
+plt.ylabel("Percent")
+plt.xticks([0,1],['offer received','No offer'])
+plt.title("  Starbucks Offer Events Distribution ")
+plt.tight_layout()
+plt.show()
+
+
+
+# Create a histogram of income
+plt.figure(figsize=[10,8])
+plt.hist(data2['income'], bins=10)
+plt.title('Distribution of Income')
+plt.ylabel("Count")
+plt.xlabel('Income');
+
+
+# Create a histogram of income among genders or only Males and females
+plt.figure(figsize=[11,8])
+plt.hist('income', data=data2[data2['gender'] == 'M'], alpha=0.5, label='Male', bins=10)
+plt.hist('income', data=data2[data2['gender'] == 'F'], alpha=0.5, label='Female', bins=10)
+plt.title('Distribution of income by Gender')
+plt.xlabel('income')
+plt.ylabel("Count")
+plt.legend();
+
+
+
+# Create a boxplot of income among genders 
+plt.figure(figsize=[11,8])
+sns.boxplot(x="gender", y="income", data=data2, color = bcolor)
+plt.title('Distribution of income by Gender')
+plt.xticks([0,1,2],['Male','Female', 'Other'])
+plt.ylabel('income')
+plt.xlabel("Gender")
+plt.legend();
+
+
+
+# Create a histogram of ages
+plt.figure(figsize=[10,8])
+plt.hist(data2['age'], bins=20)
+plt.title('Distribution of Age')
+plt.ylabel("Count")
+plt.xlabel('Age');
+
+
+# Create a histogram of ages among genders for only Males and females
+plt.figure(figsize=[11,8])
+plt.hist('age', data=data2[data2['gender'] == 'M'], alpha=0.5, label='Male', bins=10)
+plt.hist('age', data=data2[data2['gender'] == 'F'], alpha=0.5, label='Female', bins=10)
+plt.title('Distribution of Age by Gender')
+plt.xlabel('Age')
+plt.ylabel("Count")
+plt.legend();
+
+
+
+# Create a boxplot of ages among genders 
+plt.figure(figsize=[11,8])
+sns.boxplot(x="gender", y="age", data=data2, color = bcolor)
+plt.title('Distribution of Age by Gender')
+plt.xticks([0,1,2],['Male','Female', 'Other'])
+plt.ylabel('Age')
+plt.xlabel("Gender")
+plt.legend();
+
+
+# Create a histogram of membership Days
+plt.figure(figsize=[10,8])
+plt.hist(data2['membershipDays'], bins=20)
+plt.title('Distribution of Membership Days')
+plt.ylabel("Number of Users")
+plt.xlabel('Number of Days');
+
+
+# Create a histogram of membership Days among genders for only Males and females
+plt.figure(figsize=[11,8])
+plt.hist('membershipDays', data=data2[data2['gender'] == 'M'], alpha=0.5, label='Male', bins=15)
+plt.hist('membershipDays', data=data2[data2['gender'] == 'F'], alpha=0.5, label='Female', bins=15)
+plt.title('Distribution of Membership Days')
+plt.ylabel("Number of Users")
+plt.xlabel('Number of Days')
+plt.legend();
+
+# Create a boxplot of membership Days among genders 
+plt.figure(figsize=[11,8])
+sns.boxplot(x="gender", y="membershipDays", data=data2, color = bcolor)
+plt.title('Distribution of Membership Days')
+plt.xticks([0,1,2],['Male','Female', 'Other'])
+plt.title('Distribution of Membership Days')
+plt.ylabel("Number of Users")
+plt.xlabel('Number of Days')
+plt.legend();
 # D. Modeling
 #     1. Supervised learning
 # E. Deployment

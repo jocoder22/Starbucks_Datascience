@@ -453,7 +453,7 @@ plt.show()
 
 # RdBu_r, PuBu_r
 # # Plot the distribution of offer across gender
-hht.plot.bar(stacked=True, cmap='Blues', figsize=(10,7), edgecolor=["#2b2b28", "#2b2b28"])
+hht.plot.bar(stacked=True, cmap='Blues', figsize=(10,7), edgecolor=["#2b2b28", "#2b2b28", "#2b2b28"])
 plt.xticks(rotation=0)
 plt.xlabel("offer events across gender")
 plt.ylabel("Percent")
@@ -576,13 +576,56 @@ plt.yticks(rotation=0);
 
 # Analyzing response
 dada = data[data['event'] != "transaction"]
-data4 = dada.drop_duplicates(subset=['person'], keep="last")
-data8 = dada.drop_duplicates(subset=['person'])
+data8 = dada.drop_duplicates(subset=['person'], keep="last")
 
-efinal = data4.event.values
-data8.insert(3, 'eventFinal', efinal)
-data8['eventFinal'] = data8['eventFinal'].apply(lambda x: "No response" if x =="offer received" else x)
+data8['eventFinal'] = data8['event'].apply(lambda x: "No response" if x =="offer received" else x)
 data8.eventFinal.value_counts()
+
+
+pecross = pd.crosstab(data["person"], data["event"]).reset_index()
+pecross.columns.name = None
+pecross.head()
+
+pecross3 = pd.crosstab(data["person"], data["offer_type"]).reset_index()
+pecross3.columns.name = None
+pecross3.head()
+
+
+# # Get listing percentage of users response to offer
+# Analyzing the distribution of users response to offer
+offerresponse = data8["eventFinal"].value_counts(normalize=True) * 100
+offerresponse_count = data8["eventFinal"].value_counts() 
+print("\n\n\n\nusers response to offer Percentages :", offerresponse, "\n\n\n\nusers response to offer Raw counts" , 
+      offerresponse_count, sep="\n" )
+
+
+
+  
+# Plot the distribution of users response to offer
+plt.figure(figsize=[10,8])
+sns.barplot(x = offerresponse.index, y= offerresponse.values,  color = bcolor,   edgecolor="#2b2b28")
+plt.xlabel("Response ")
+plt.ylabel("Percentage of members")
+plt.title("Starbucks Users Response to offer")
+plt.tight_layout()
+plt.show()
+
+
+
+offertype2 = pd.crosstab(data8["offer_type"], data8["eventFinal"], normalize="all") * 100
+offertype22 = pd.crosstab(data8["offer_type"], data8["eventFinal"], normalize="all", margins = True) * 100
+offertype = pd.crosstab(data8["offer_type"], data8["eventFinal"],   margins = True)
+offertype
+
+
+# # Plot the distribution of offer responses
+offertype2.plot.bar(stacked=True, cmap='Blues_r', figsize=(10,7), edgecolor=["#2b2b28", "#2b2b28", "#2b2b28")
+plt.xticks(rotation=0)
+plt.xlabel("Response across offer")
+plt.ylabel("Percent")
+plt.title("  Starbucks Offer Response Distribution ")
+plt.tight_layout()
+plt.show()
 
 
 # D. Modeling

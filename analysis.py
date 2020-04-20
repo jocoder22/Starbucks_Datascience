@@ -37,10 +37,11 @@ profile = pd.read_json('data/profile.json', orient='records', lines=True)
 transcript = pd.read_json('data/transcript.json', orient='records', lines=True)
     
 # C. Data preparation
-#     1. Clean datasets
-#     2. Features extraction and engineering
-#     3. Exploratory data analysis
-#     4. Data visualization
+#     1. Examine and understand the datasets
+#     2. Clean and join datasets
+#     3. Features extraction and engineering
+#     4. Exploratory and explanatory data analysis
+#     5. Data visualization
 
 
 

@@ -300,6 +300,18 @@ missing_income_gender.age.describe()
 
 
 
+# Working with complete, non-missing dataset
+
+data = clean_data[~clean_data['gender'].isna()]
+data.event.value_counts()
+exam_understand(data)
+data.person.nunique()
+data = data.fillna({'reward': 99 ,'difficulty':99, 'offer_type':'No_offer', 
+                    'offerType2':'No_offer','duration':0, 'Channel_web':0,
+                    'Channel_email':0, 'Channel_mobile':0, 'Channel_social':0})
+data.info()
+data['gender'].value_counts()
+
 #     5. Data visualization
 
 

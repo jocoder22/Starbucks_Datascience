@@ -250,6 +250,7 @@ def data_merger(data1, data22, data33):
 clean_data = data_merger(transcript, profile, portfolio)
 clean_data.head()
 exam_understand(clean_data)
+clean_data.agegroups.value_counts()
 
 #     4. Exploratory and explanatory data analysis
 #     5. Data visualization

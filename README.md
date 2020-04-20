@@ -54,34 +54,26 @@ First task is to combine transaction, demographic and offer data to determine wh
     - `Scklearn`
     - `Seaborn`
     
- ## Dataset
- Publicly avaiable [Airbnb NYC dataset](http://insideairbnb.com/get-the-data.html)
- 
- ## GitHub files
- * analysis_plan.txt
-    - Plain text file that lays out Cross-Industry Standard Process of Data Mining - (CRISP-DM) for this project
-  
- * analysis.ipynb
-    - Jupyter notebook with python codes used in this project
     
- * clean.csv
-    - csv file contained cleaned dataset ready for analysis
+###  Age groups
+- Baby Boomers (Roughly 50 to 70 years old)
+- Generation X (Roughly 35 – 50 years old)
+- Millennials, or Generation Y (18 – 34 years old)
+- Generation Z, or iGeneration (Teens & younger)
  
+ f
  ## Analysis questions
  Following the CRISP-DM process this project will find solutions to the following questions
 
 * Question I
-   - Where are the Airbnb rooms in New York City?
-      -  Analyzing the distribution of Airbnb listing in the 5 boroughs of NYC.
+   - Which demographic groups respond best to which offer type?
+      -  Analyzing the response rate of each gender and age groups.
 * Question II
-  - Where is the most affordable best Airbnb rooms in New York using average price in each borough.
-    -  Analyzing the distribution of Airbnb average prices in the 5 boroughs of NYC.
-* Question III
-  - What is the most popular and affordable Airbnb rooms in each New York borough
-    - Finding the average prices of Airbnb rooms according to room types in each NYC borough.
+  - Who is the typical Starbucks rewards mobile app user?
+    -  Analysis of descriptive statistics of all variables in the dataset.
 * Question IV
-  - What are the major determinants of prices of rooms in New York Airbnb 
-    - Finding factors that positively and negatively impact the price of Airbnb rooms in NYC using linear regression analysis.
+  - Who will response to an offer? 
+    - Build a model that predicts whether or not someone will respond to an offer.
 
 ## Jupyter Notebook
 Find jupyter notebook [here](https://github.com/jocoder22/NewYork_Airbnb/blob/master/analysis.ipynb)

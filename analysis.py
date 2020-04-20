@@ -40,7 +40,8 @@ transcript = pd.read_json('data/transcript.json', orient='records', lines=True)
 #     1. Examine and understand the datasets
 
 def exam_understand(dataset):
-    """The exam_understand function print out the head, info and shape of dataset
+    """The exam_understand function print out the head, information (dtype, non-missing number, column name),
+        shape and descriptive statistics for numerical features of dataset
     
     Args:
         dataset (DataFrame)

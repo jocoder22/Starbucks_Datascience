@@ -79,7 +79,7 @@ First task is to combine transaction, demographic and offer data to determine wh
 * Question II
   - Who is the typical Starbucks rewards mobile app user?
     -  Analysis of descriptive statistics of all variables in the dataset.
-* Question IV
+* Question III
   - Who will response to an offer? 
     - Build a model that predicts whether or not someone will respond to an offer.
 

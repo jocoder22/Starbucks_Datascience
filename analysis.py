@@ -549,6 +549,42 @@ plt.title('Distribution of Membership Days')
 plt.ylabel("Number of Users")
 plt.xlabel('Number of Days')
 plt.legend();
+
+
+# Assess correlations
+plt.figure(figsize=[11,8])
+sns.heatmap(data2[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
+plt.title('Correlation Heatmap - All Users')
+plt.yticks(rotation=0);
+
+
+men = data2[data2['gender'] == 'M']
+ladies = data2[data2['gender'] == 'F']
+
+plt.figure(figsize=[11,8])
+sns.heatmap(ladies[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
+plt.title('Correlation Heatmap - Female Users')
+plt.yticks(rotation=0);
+
+
+plt.figure(figsize=[11,8])
+sns.heatmap(men[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
+plt.title('Correlation Heatmap - Male Users')
+plt.yticks(rotation=0);
+
+
+
+# Analyzing response
+dada = data[data['event'] != "transaction"]
+data4 = dada.drop_duplicates(subset=['person'], keep="last")
+data8 = dada.drop_duplicates(subset=['person'])
+
+efinal = data4.event.values
+data8.insert(3, 'eventFinal', efinal)
+data8['eventFinal'] = data8['eventFinal'].apply(lambda x: "No response" if x =="offer received" else x)
+data8.eventFinal.value_counts()
+
+
 # D. Modeling
 #     1. Supervised learning
 # E. Deployment

@@ -73,6 +73,7 @@ transcript['event'].value_counts()
 # E. Deployment
 #     1. Summary report
 #     2. Conclusion(s)
+
     
     
 

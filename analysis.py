@@ -14,3 +14,19 @@ D. Modeling
 E. Deployment
     1. Summary report
     2. Conclusion(s)
+    
+    
+#   import modules and libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+import datetime as dt
+from sklearn.feature_extraction.text import CountVectorizer
+
+
+# A. Bussiness Understanding                 
+#     1. Formulate research/analysis question(s)
+
+

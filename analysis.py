@@ -302,16 +302,6 @@ missing_income_gender.age.describe()
 
 
 # Working with complete, non-missing dataset
-data = clean_data[~clean_data['gender'].isna()]
-data.event.value_counts()
-exam_understand(data)
-data.person.nunique()
-data = data.fillna({'reward': 99 ,'difficulty':99, 'offer_type':'No_offer', 
-                    'offerType2':'No_offer','duration':0, 'Channel_web':0,
-                    'Channel_email':0, 'Channel_mobile':0, 'Channel_social':0})
-data.info()
-data['gender'].value_counts()
-
 
 def col_encoder(data, x):
     """The col_encoder function maps the long string column values to simple number string
@@ -348,21 +338,78 @@ def col_encoder(data, x):
        
     return col_encoded
 
+
+data = clean_data[~clean_data['gender'].isna()]
 person_encoded = col_encoder(data, "person")
 offer_encoded = col_encoder(data, "offer_id")
 
-
 data.insert(1, 'user_id', person_encoded)
-
 data.insert(3 , 'offer_id2', offer_encoded)
 
-# show header
-data.head()  
+data = data.fillna({'reward': 99 ,'difficulty':99, 'offer_type':'No_offer', 
+                    'offerType2':'No_offer','duration':0, 'Channel_web':0,
+                    'Channel_email':0, 'Channel_mobile':0, 'Channel_social':0})
+data.info()
+data['gender'].value_counts()
+data.event.value_counts()
+exam_understand(data)
+data.shape, data.person.nunique()
+
+# Drop duplicates and get one record per user for further analysis
+data2 = data.drop_duplicates(subset=['person'])
+data2.shape
+
+
 
 #     5. Data visualization
+# # Get listing percentage for gender
+# Analyzing the distribution of members according to gender.
+genderclass_p = data2["gender"].value_counts(normalize=True) * 100
+genderclass_count = data2["gender"].value_counts() 
+print("\n\n\n\nlisting each gender Percentages :", genderclass_p, "\n\n\n\nlisting each gender Raw counts" , 
+      genderclass_count, sep="\n" )
 
 
 
+# Plot the gender class distribution
+plt.figure(figsize=[10,8])
+sns.barplot(x= genderclass_p.index, y = genderclass_p.values, color = bcolor, edgecolor="#2b2b28")
+# plt.bar( ddf['index'], ddf.gender,  edgecolor="#2b2b28")
+plt.xlabel("Gender")
+plt.xticks([0,1,2],['Male','Female', 'Other'])
+plt.ylabel("Percentage of members")
+plt.title("Starbucks Membership by Gender")
+plt.tight_layout()
+plt.show()
+
+
+# # Get listing percentage of events
+# Analyzing the distribution of events.
+event_p = data["event"].value_counts(normalize=True) * 100
+event_counts = data["event"].value_counts() 
+print("\n\n\n\nlisting each event Percentages :", event_p, "\n\n\n\nlisting each event Raw counts" , event_counts, sep="\n" )
+
+
+  
+# Plot the event distribution
+plt.figure(figsize=[10,8])
+sns.barplot(x = event_p.index, y= event_p.values,  color = bcolor,   edgecolor="#2b2b28")
+plt.xlabel("Event")
+plt.ylabel("Percentage of members")
+plt.title("Starbucks Event Distribution")
+plt.tight_layout()
+plt.show()
+
+# get data for offer events
+devent = data[data['event']!="transaction"].reset_index(drop=True)
+
+
+# sorted bar chart on ordinal categories
+ordering_ = ['offer received', 'offer viewed', 'offer completed']
+t = pd.CategoricalDtype(categories= ordering_, ordered=True)
+
+devent["event"] = devent["event"].astype(t)
+devent.event.value_counts()
 
 # D. Modeling
 #     1. Supervised learning

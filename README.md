@@ -44,7 +44,7 @@ First task is to combine transaction, demographic and offer data to determine wh
 
 * **Required packages** 
   
-  The analysis is done using `Python 3.8.1`. 
+  The analysis is done using `Python 3.8.1` 
   
   Python Packages used are: 
   

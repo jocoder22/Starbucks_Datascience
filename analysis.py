@@ -479,7 +479,8 @@ plt.hist('income', data=data2[data2['gender'] == 'F'], alpha=0.5, label='Female'
 plt.title('Distribution of income by Gender')
 plt.xlabel('income')
 plt.ylabel("Count")
-plt.legend();
+plt.legend()
+plt.show()
 
 
 
@@ -490,7 +491,8 @@ plt.title('Distribution of income by Gender')
 plt.xticks([0,1,2],['Male','Female', 'Other'])
 plt.ylabel('income')
 plt.xlabel("Gender")
-plt.legend();
+plt.legend()
+plt.show()
 
 
 
@@ -499,7 +501,8 @@ plt.figure(figsize=[10,8])
 plt.hist(data2['age'], bins=20)
 plt.title('Distribution of Age')
 plt.ylabel("Count")
-plt.xlabel('Age');
+plt.xlabel('Age')
+plt.show()
 
 
 # Create a histogram of ages among genders for only Males and females
@@ -509,7 +512,8 @@ plt.hist('age', data=data2[data2['gender'] == 'F'], alpha=0.5, label='Female', b
 plt.title('Distribution of Age by Gender')
 plt.xlabel('Age')
 plt.ylabel("Count")
-plt.legend();
+plt.legend()
+plt.show()
 
 
 
@@ -520,7 +524,8 @@ plt.title('Distribution of Age by Gender')
 plt.xticks([0,1,2],['Male','Female', 'Other'])
 plt.ylabel('Age')
 plt.xlabel("Gender")
-plt.legend();
+plt.legend()
+plt.show()
 
 
 # Create a histogram of membership Days
@@ -528,7 +533,8 @@ plt.figure(figsize=[10,8])
 plt.hist(data2['membershipDays'], bins=20)
 plt.title('Distribution of Membership Days')
 plt.ylabel("Number of Users")
-plt.xlabel('Number of Days');
+plt.xlabel('Number of Days')
+plt.show()
 
 
 # Create a histogram of membership Days among genders for only Males and females

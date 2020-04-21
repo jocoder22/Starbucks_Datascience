@@ -5,7 +5,7 @@ Writing a Data Scientist Blog Post
 # Starbucks Data Scientist Job!
 
 ## Introduction
-The project analyzed simulated data that mimics customer behavior on the Starbucks rewards mobile app. Once every few days, the compnany  sends out advertisement,  discount or BOGO (buy one get one free) offers to some users of the mobile app.
+The project analyzed simulated data that mimics customer behavior on the Starbucks rewards mobile app. Once every few days, the company sends out an advertisement, discounts or BOGO (buy one get one free) offers to some users of the mobile app..
 
 ## Data Sets
 The data is contained in three files:
@@ -40,7 +40,7 @@ The data is contained in three files:
 - time (int) - time in hours since start of test. The data begins at time t=0
 - value - (dict of strings) - either an offer id or transaction amount depending on the record
 
-First task is to combine transaction, demographic and offer data to determine which demographic groups respond best to which offer type. The data set is a simplified version of the real Starbucks app because the underlying simulator only has one product whereas Starbucks actually sells dozens of products.
+The first task is to combine transaction, demographic and offer data to determine which demographic groups respond best to which offer type. The data set is a simplified version of the real Starbucks app because the underlying simulator only has one product whereas Starbucks actually sells dozens of products.
 
 * **Required packages** 
   

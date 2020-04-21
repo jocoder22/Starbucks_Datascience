@@ -640,7 +640,8 @@ plt.show()
 
 
 # D. Modeling
-#     1. Supervised learning
+#     1. Tackle reseach questions
+#     2. Supervised learning
 # E. Deployment
 #     1. Summary report
 #     2. Conclusion(s)

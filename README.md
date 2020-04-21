@@ -73,13 +73,15 @@ First task is to combine transaction, demographic and offer data to determine wh
  
  ## Analysis questions
  Following the CRISP-DM process this project will find solutions to the following questions
-
-* Question I
-   - Which demographic groups respond best to which offer type?
-      -  Analyzing the response rate of each gender and age groups.
-* Question II
+ 
+ * Question I
   - Who is the typical Starbucks rewards mobile app user?
     -  Analysis of descriptive statistics of all variables in the dataset.
+
+* Question II
+   - Which demographic groups respond best to which offer type?
+      -  Analyzing the response rate of each gender and age groups.
+
 * Question III
   - Who will response to an offer? 
     - Build a model that predicts whether or not someone will respond to an offer.

@@ -16,7 +16,7 @@ C. Data preparation
     3. Features extraction and engineering
     4. Exploratory and explanatory data analysis
     5. Data visualization
-D. Modelling and answers to research question
+D. Predictive modeling and answers to research question
     1. Tackle reseach questions
     2. Supervised learning
 E. Deployment

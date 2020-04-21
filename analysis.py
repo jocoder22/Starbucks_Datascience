@@ -544,7 +544,8 @@ plt.hist('membershipDays', data=data2[data2['gender'] == 'F'], alpha=0.5, label=
 plt.title('Distribution of Membership Days')
 plt.ylabel("Number of Users")
 plt.xlabel('Number of Days')
-plt.legend();
+plt.legend()
+plt.show()
 
 # Create a boxplot of membership Days among genders 
 plt.figure(figsize=[11,8])
@@ -554,14 +555,16 @@ plt.xticks([0,1,2],['Male','Female', 'Other'])
 plt.title('Distribution of Membership Days')
 plt.ylabel("Number of Users")
 plt.xlabel('Number of Days')
-plt.legend();
+plt.legend()
+plt.show()
 
 
 # Assess correlations
 plt.figure(figsize=[11,8])
 sns.heatmap(data2[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
 plt.title('Correlation Heatmap - All Users')
-plt.yticks(rotation=0);
+plt.yticks(rotation=0)
+plt.show()
 
 
 men = data2[data2['gender'] == 'M']
@@ -570,13 +573,15 @@ ladies = data2[data2['gender'] == 'F']
 plt.figure(figsize=[11,8])
 sns.heatmap(ladies[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
 plt.title('Correlation Heatmap - Female Users')
-plt.yticks(rotation=0);
+plt.yticks(rotation=0)
+plt.show()
 
 
 plt.figure(figsize=[11,8])
 sns.heatmap(men[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
 plt.title('Correlation Heatmap - Male Users')
-plt.yticks(rotation=0);
+plt.yticks(rotation=0)
+plt.show()
 
 
 

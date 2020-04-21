@@ -57,7 +57,7 @@ First task is to combine transaction, demographic and offer data to determine wh
     
 ###  Age groups
 - Elder Adults (over 70 years old)
-- Baby Boomers (Roughly 50 to 70 years old)
+- Baby Boomers (Roughly 51 to 70 years old)
 - Generation X (Roughly 35 – 50 years old)
 - Millennials, or Generation Y (18 – 34 years old)
 - Generation Z, or iGeneration (Teens & younger)

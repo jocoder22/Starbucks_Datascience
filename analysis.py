@@ -26,7 +26,18 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 import datetime as dt
-from sklearn.feature_extraction.text import CountVectorizer  
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
+from sklearn.ensemble import StackingRegressor, GradientBoostingRegressor, VotingRegressor, RandomForestRegressor 
+from sklearn.linear_model import LinearRegression, TheilSenRegressor, RANSACRegressor, HuberRegressor, RidgeCV, LassoCV
+from sklearn.pipeline import make_pipeline, Pipeline
+from sklearn.neural_network import MLPRegressor
+from sklearn.tree import DecisionTreeRegressor 
+
+from xgboost import XGBRegressor
+from eli5.sklearn import PermutationImportance
 
 bcolor = sns.color_palette()[0]
 

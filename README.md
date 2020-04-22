@@ -82,8 +82,8 @@ The first task is to combine transaction, demographic and offer data to determin
  Following the CRISP-DM process this project will find solutions to the following questions
  
  * Question I
-  - Who is the typical Starbucks rewards mobile app user?
-    -  Analysis of descriptive statistics of all variables in the dataset.
+    - Who is the typical Starbucks rewards mobile app user?
+       -  Analysis of descriptive statistics of all variables in the dataset.
 
 * Question II
    - Which demographic groups respond best to which offer type?

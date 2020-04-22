@@ -100,7 +100,7 @@ Find jupyter notebook [here](https://github.com/jocoder22/NewYork_Airbnb/blob/ma
 Github repository at this [link](https://github.com/jocoder22/Starbucks_Datascience)
 
 ## blog post 
-See blog post at this [link](https://medium.com/@okigbookey/special-new-york-city-airbnb-rooms-made-for-you-4699a4584144) 
+See blog post at this [link](https://medium.com/@okigbookey/starbucks-data-scientist-a9455d67a1cc) 
    
 
 

@@ -86,8 +86,6 @@ The first task is to combine transaction, demographic and offer data to determin
   - Who will response to an offer? 
     - Build a model that predicts whether or not someone will respond to an offer.
 
-## Jupyter Notebook
-Find jupyter notebook [here](https://github.com/jocoder22/NewYork_Airbnb/blob/master/analysis.ipynb)
 
 ## Conclusion
 * Manhattan, Brooklyn and Queens accounted for over 96% of Airbnb listings in New York City. Based on location, Brooklyn is more accessible to Manhattan which is the city center compared to Queens. Initial search for vacation should start with searching listings in Brooklyn and Manhattan.

@@ -62,6 +62,13 @@ The first task is to combine transaction, demographic and offer data to determin
 - Millennials, or Generation Y (18 – 34 years old)
 - Generation Z, or iGeneration (Teens & younger)
 
+### get income groups
+- Lowest income less than 31,000
+- Lower-middle income between 31,000  and 41,999
+- Middle-income between 42,000 and 125,999
+- Upper-middle income between 126,000 and 187,999
+- Higher-income more than 188,000 
+
 
  ## GitHub files
  * analysis_plan.txt

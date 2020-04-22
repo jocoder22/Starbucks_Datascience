@@ -36,7 +36,7 @@ The data is contained in three files:
 ### transcript.json
 
 - event (str) - record description (ie transaction, offer received, offer viewed, etc.)
--- person (str) - customer id
+- person (str) - customer id
 - time (int) - time in hours since start of test. The data begins at time t=0
 - value - (dict of strings) - either an offer id or transaction amount depending on the record
 
@@ -87,7 +87,7 @@ The first task is to combine transaction, demographic and offer data to determin
 
 * Question II
    - Which demographic groups respond best to which offer type?
-      -  Analyzing the response rate of each gender and age groups.
+     -  Analyzing the response rate of each gender and age groups.
 
 * Question III
   - Who will response to an offer? 

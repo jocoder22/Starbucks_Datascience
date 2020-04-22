@@ -55,14 +55,14 @@ The first task is to combine transaction, demographic and offer data to determin
     - `Seaborn`
     
     
-###  Age groups
+### Age groups
 - Elder Adults (over 70 years old)
 - Baby Boomers (Roughly 51 to 70 years old)
 - Generation X (Roughly 35 – 50 years old)
 - Millennials, or Generation Y (18 – 34 years old)
 - Generation Z, or iGeneration (Teens & younger)
 
-### get income groups
+### Income groups
 - Lowest income less than 31,000
 - Lower-middle income between 31,000  and 41,999
 - Middle-income between 42,000 and 125,999

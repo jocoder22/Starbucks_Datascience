@@ -19,27 +19,44 @@
 #     2. Read/Download relevant datasets
     
     
-#   import modules and libraries
+# import modules and libraries
 import numpy as np
 import pandas as pd
+import math
+import json
+import datetime as dt
+
+import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-import datetime as dt
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-from sklearn.ensemble import StackingRegressor, GradientBoostingRegressor, VotingRegressor, RandomForestRegressor 
-from sklearn.linear_model import LinearRegression, TheilSenRegressor, RANSACRegressor, HuberRegressor, RidgeCV, LassoCV
-from sklearn.pipeline import make_pipeline, Pipeline
-from sklearn.neural_network import MLPRegressor
-from sklearn.tree import DecisionTreeRegressor 
 
-from xgboost import XGBRegressor
+
+from sklearn.pipeline import make_pipeline, Pipeline
+
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import LinearSVC
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.multioutput import MultiOutputClassifier
+
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+from sklearn.preprocessing import MaxAbsScaler
+
+
+from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
+from sklearn.metrics import classification_report
+
+
 from eli5.sklearn import PermutationImportance
 
+
+% matplotlib inline
+
 bcolor = sns.color_palette()[0]
+blued = sns.color_palette("Blues_d")
 
 # read in the json files
 portfolio = pd.read_json('data/portfolio.json', orient='records', lines=True)

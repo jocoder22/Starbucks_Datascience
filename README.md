@@ -97,7 +97,7 @@ The first task is to combine transaction, demographic and offer data to determin
 ## Conclusion
 From this analysis is it reasonable to make the following conclusions:
 * The typical Starbucks mobile app user is a middle-aged male - baby-boomers - in the middle-class income category. From a business perspective, marketing and product designs should target middle-class hard-working American baby-boomer!
-* Discount offers have the highest mobile app users response rate with a 30% viewing rate and a 62% completion rate. From a business and marketing perspective, these viewers should be marketed to complete the Discount offer.
+* Discount offers had the highest mobile app users response rate with a 30% viewing rate and a 62% completion rate. From a business and marketing perspective, these viewers should be marketed to complete the Discount offer.
 * Membership, income, and perceived rewards are the strongest inducers of response by these users. From a business and marketing perspective, Starbucks customers should encourage to sign up for the mobile app.
 
 ## Github repository 

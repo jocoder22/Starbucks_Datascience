@@ -53,8 +53,6 @@ from sklearn.metrics import classification_report
 from eli5.sklearn import PermutationImportance
 
 
-% matplotlib inline
-
 bcolor = sns.color_palette()[0]
 blued = sns.color_palette("Blues_d")
 

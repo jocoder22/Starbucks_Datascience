@@ -272,8 +272,7 @@ def clean_portfolio(datapp):
     datap = datapp.copy()
     
     # get ids
-    bbb = datap.id.tolist()
-    
+    # bbb = datap.id.tolist()
     # create offerType2
     # datap['offerType2'] = datap[['offer_type', 'id']].apply(lambda x: x[0]+str(bbb.index(x[1])), axis=1)
     datap['offer_id_short'] = [str(x).strip()[-4:] for x in datap['id']]

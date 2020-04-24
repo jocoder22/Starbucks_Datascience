@@ -123,26 +123,23 @@ def exam_understand(dataset):
 exam_understand(portfolio)
 
 exam_understand(profile)
-
-
-
 exam_understand(transcript)
 
-portfolio.info()
+print(portfolio.info())
 
-portfolio.head()
-
-
-
-profile.head()
+print(portfolio.head())
 
 
 
-transcript.head()
+print(profile.head())
 
 
 
-transcript['event'].value_counts()
+print(transcript.head())
+
+
+
+print(transcript['event'].value_counts())
 
 
 # ## 2a. Clean
@@ -256,8 +253,6 @@ def profile_cleaner(dat):
     
 
 
-# In[ ]:
-
 
 def clean_portfolio(datapp):
     """The clean_portfolio function will do data cleaning and wrangling of the portfolio data 
@@ -361,15 +356,15 @@ clean_data = data_merger(transcript, profile, portfolio)
 
 
 
-clean_data.head()
+print(clean_data.head())
 
 
 exam_understand(clean_data)
 
-clean_data.shape
+print(clean_data.shape)
 
 
-clean_data.agegroups.value_counts()
+print(clean_data.agegroups.value_counts())
 
 
 # 
@@ -392,64 +387,64 @@ clean_data.agegroups.value_counts()
 
 # analyse missing gender
 missing_gender = clean_data[clean_data['gender'].isna()]
-missing_gender.event.value_counts()
+print(missing_gender.event.value_counts())
 
 
-missing_gender.head()
+print(missing_gender.head())
 
 
-missing_gender.shape, missing_gender.person.nunique()
+print(missing_gender.shape, missing_gender.person.nunique())
 
 
 # analyse missing income
 missing_income = clean_data[clean_data['income'].isna()]
-missing_income.event.value_counts()
+print(missing_income.event.value_counts())
 
 
 
-missing_income.shape, missing_income.person.nunique()
+print(missing_income.shape, missing_income.person.nunique())
 
 
 
 
 # analyse missing gender among those missing income
 missing_income_gender = missing_income[missing_income['gender'].isna()]
-missing_income_gender.event.value_counts()
+print(missing_income_gender.event.value_counts())
 
 
 
 
 missing_income_nodup = missing_income.drop_duplicates(subset=['person'])
-missing_income_nodup.shape
+print(missing_income_nodup.shape)
 
 
 
 
-missing_income_nodup.event.value_counts()
+print(missing_income_nodup.event.value_counts())
 
 
 
 
 # analyse none missing gender among those missing income
 missing_income_gender_npg = missing_income[~missing_income['gender'].isna()]
-missing_income_gender_npg.shape
+print(missing_income_gender_npg.shape)
 
 
 
 
 # analyse age amongst those missing gender and income
-missing_income.age.describe()
+print(missing_income.age.describe())
 
 
 nullreward = clean_data[clean_data.reward.isnull()]
-nullreward.head()
+print(nullreward.head())
 
 
 
 
-nullreward.info()
+print(nullreward.info())
 
-nullreward.event.value_counts()
+print(nullreward.event.value_counts())
 
 
 # ## insights
@@ -470,11 +465,11 @@ nullreward.event.value_counts()
 
 
 data = clean_data[~clean_data['gender'].isna()]
-data.event.value_counts()
+print(data.event.value_counts())
 
-data.info()
+print(data.info())
 
-data.person.nunique()
+print(data.person.nunique())
 
 
 data = data.fillna({'reward': 99 ,'difficulty':99, 'offer_type':'No_offer', 
@@ -483,20 +478,20 @@ data = data.fillna({'reward': 99 ,'difficulty':99, 'offer_type':'No_offer',
 
 # data = data.fillna(0, inplace = True)
 
-data.info()
+print(data.info())
 
-data.head()
-
-
-
-data[data.event == "transaction"].tail()
-
-
-data.shape, data.person.nunique()
+print(data.head())
 
 
 
-data['gender'].value_counts()
+print(data[data.event == "transaction"].tail())
+
+
+print(data.shape, data.person.nunique())
+
+
+
+print(data['gender'].value_counts())
 
 
 
@@ -545,22 +540,22 @@ data.insert(1, 'user_id', person_encoded)
 data.insert(3 , 'offer_id2', offer_encoded)
 
 # show header
-data.head()  
+print(data.head())  
 
 
 # calcuate number of unique members
-data.shape, data.person.nunique()
+print(data.shape, data.person.nunique())
 
 
 
 # calcuate events
-data.event.value_counts()
+print(data.event.value_counts())
 
 # Drop duplicates and get one record per user for further analysis
 data2 = data.drop_duplicates(subset=['person'])
 
 
-data2.shape
+print(data2.shape)
 
 
 # # 5. Data visualization
@@ -616,7 +611,7 @@ ordering_ = ['offer received', 'offer viewed', 'offer completed']
 t = pd.CategoricalDtype(categories= ordering_, ordered=True)
 
 devent["event"] = devent["event"].astype(t)
-devent.event.value_counts()
+print(devent.event.value_counts())
 
 
 
@@ -674,13 +669,13 @@ plt.tight_layout()
 plt.show()
 
 
-data2.head()
+print(data2.head())
 
 
-data2.describe()
+print(data2.describe())
 
 
-data2.shape
+print(data2.shape)
 
 # Create a histogram of income
 plt.figure(figsize=[10,8])
@@ -688,6 +683,7 @@ plt.hist(data2['income'], bins=10)
 plt.title('Distribution of Income')
 plt.ylabel("Count")
 plt.xlabel('Income')
+plt.show()
 
 
 # Create a histogram of income among genders or only Males and females
@@ -698,6 +694,7 @@ plt.title('Distribution of income by Gender')
 plt.xlabel('income')
 plt.ylabel("Count")
 plt.legend()
+plt.show()
 
 # Create a boxplot of income among genders 
 plt.figure(figsize=[11,8])
@@ -707,14 +704,15 @@ plt.xticks([0,1,2],['Male','Female', 'Other'])
 plt.ylabel('income')
 plt.xlabel("Gender")
 plt.legend()
-
+plt.show()
 
 # Create a histogram of ages
 plt.figure(figsize=[10,8])
 plt.hist(data2['age'], bins=20)
 plt.title('Distribution of Age')
 plt.ylabel("Count")
-plt.xlabel('Age');
+plt.xlabel('Age')
+plt.show()
 
 
 
@@ -725,7 +723,8 @@ plt.hist('age', data=data2[data2['gender'] == 'F'], alpha=0.5, label='Female', b
 plt.title('Distribution of Age by Gender')
 plt.xlabel('Age')
 plt.ylabel("Count")
-plt.legend();
+plt.legend()
+plt.show()
 
 
 
@@ -736,7 +735,8 @@ plt.title('Distribution of Age by Gender')
 plt.xticks([0,1,2],['Male','Female', 'Other'])
 plt.ylabel('Age')
 plt.xlabel("Gender")
-plt.legend();
+plt.legend()
+plt.show()
 
 
 
@@ -745,7 +745,8 @@ plt.figure(figsize=[10,8])
 plt.hist(data2['membershipDays'], bins=20)
 plt.title('Distribution of Membership Days')
 plt.ylabel("Number of Users")
-plt.xlabel('Number of Days');
+plt.xlabel('Number of Days')
+plt.show()
 
 
 
@@ -756,7 +757,8 @@ plt.hist('membershipDays', data=data2[data2['gender'] == 'F'], alpha=0.5, label=
 plt.title('Distribution of Membership Days')
 plt.ylabel("Number of Users")
 plt.xlabel('Number of Days')
-plt.legend();
+plt.legend()
+plt.show()
 
 
 
@@ -768,14 +770,16 @@ plt.xticks([0,1,2],['Male','Female', 'Other'])
 plt.title('Distribution of Membership Days')
 plt.ylabel("Number of Users")
 plt.xlabel('Number of Days')
-plt.legend();
+plt.legend()
+plt.show()
 
 
 
 plt.figure(figsize=[11,8])
 sns.heatmap(data2[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
 plt.title('Correlation Heatmap - All Users')
-plt.yticks(rotation=0);
+plt.yticks(rotation=0)
+plt.show()
 
 
 
@@ -787,36 +791,35 @@ ladies = data2[data2['gender'] == 'F']
 plt.figure(figsize=[11,8])
 sns.heatmap(ladies[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
 plt.title('Correlation Heatmap - Female Users')
-plt.yticks(rotation=0);
+plt.yticks(rotation=0)
+plt.show()
 
 
 
 plt.figure(figsize=[11,8])
 sns.heatmap(men[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
 plt.title('Correlation Heatmap - Male Users')
-plt.yticks(rotation=0);
+plt.yticks(rotation=0)
+plt.show()
 
 
 # # D. Predictive modeling and answers to research question
-
 # ## 1. Tackle reseach questions
-
-# 
-#  
+ 
 # # Question I
 # ## Who is the typical Starbucks rewards mobile app user?
 # - Analysis of descriptive statistics of all variables in the dataset.
 
 # create dataframe with one record per user
 single_users = data.drop_duplicates(subset=['person'], keep="last")
-single_users.person.nunique(), single_users.shape
+print(single_users.person.nunique(), single_users.shape)
 
 
 # ## Analyze gender:
 
 # find the highest count gender
 # the gender with most users is typical
-single_users.gender.value_counts(normalize=True) * 100
+print(single_users.gender.value_counts(normalize=True) * 100)
 
 
 
@@ -828,7 +831,7 @@ plt.hist('age', data=data2[data2['gender'] == 'F'], alpha=0.5, label='Female', b
 plt.title('Distribution of Age by Gender')
 plt.xlabel('Age')
 plt.ylabel("Count")
-plt.legend();
+plt.legend()
 
 plt.subplot(122)
 # Create a histogram of income among genders or only Males and females
@@ -836,8 +839,8 @@ plt.hist('income', data=data2[data2['gender'] == 'M'], alpha=0.5, label='Male', 
 plt.hist('income', data=data2[data2['gender'] == 'F'], alpha=0.5, label='Female', bins=10)
 plt.title('Distribution of income by Gender')
 plt.xlabel('income')
-# plt.ylabel("Count")
-plt.legend();
+plt.legend()
+plt.show()
 
 
 # ## Analyze age
@@ -861,9 +864,9 @@ def plot_dnorm(arr):
 
 
 # Distribution of users age is fairly normal, although the mean and median relatively close
-single_users.age.describe()
+print(single_users.age.describe())
 
-single_users.agegroups.value_counts(normalize=True) * 100
+print(single_users.agegroups.value_counts(normalize=True) * 100)
 
 
 
@@ -871,21 +874,22 @@ single_users.agegroups.value_counts(normalize=True) * 100
 plt.figure(figsize=[10,8])
 single_users['age'].plot.hist(density=True, color = 'darkblue',
              edgecolor='black',linewidth = 4)
-single_users['age'].plot.kde(legend=False, title="Histogram of all age");
+single_users['age'].plot.kde(legend=False, title="Histogram of all age")
+plt.show()
 
 
 data_age = single_users.query('age >= age.mean()-2 and age <= age.median()+2')
-data_age.agegroups.value_counts()
+print(data_age.agegroups.value_counts())
 
 
 # ## Analyze income
 # Distribution of users income is poorly normal, although the mean and median relatively close
-single_users.income.describe()
+print(single_users.income.describe())
 
 
 
 bb = single_users.incomegroups.value_counts(normalize=True) * 100
-bb
+print(bb)
 
 
 # # # plot the room types
@@ -901,7 +905,7 @@ plt.show()
 
 bba = single_users.agegroups.value_counts(normalize=True) * 100
 # bba =  bba.reset_index()
-bba
+print(bba)
 
 
 # # # plot the room types
@@ -938,7 +942,7 @@ plt.show()
 plt.figure(figsize=[10,8])
 single_users['income'].plot.hist(density=True, color = 'darkblue',
              edgecolor='black',linewidth = 4)
-single_users['income'].plot.kde(legend=False, title="Histogram of all income");
+single_users['income'].plot.kde(legend=False, title="Histogram of all income")
 
 
 
@@ -946,7 +950,7 @@ plot_dnorm(single_users["income"])
 
 
 data_income = single_users.query('income >= income.median()-2 and income <= income.mean()+2')
-data_income.incomegroups.value_counts()
+print(data_income.incomegroups.value_counts())
 
 
 
@@ -971,7 +975,7 @@ data8['offer_type'] = data8['offer_type'].astype(tooffer)
 # check total number of users and those with complete dataset the received an offer
 clean_data.person.nunique(), data8.shape
 offf2 = data8.eventFinal.value_counts(normalize=True)*100
-offf2
+print(offf2)
 
 plt.figure(figsize=[10,8])
 sns.barplot(x = offf2.index, y= offf2.values,  color = bcolor,   edgecolor=["#2b2b28","#2b2b28","#2b2b28","#2b2b28"] , linewidth = 2)
@@ -981,11 +985,11 @@ plt.ylabel("Percentage")
 plt.tight_layout()
 plt.show()
 
-data8.offer_type.value_counts()
+print(data8.offer_type.value_counts())
 
 offf = data8.offer_type.value_counts(normalize=True)*100
 # offf = offf.reset_index()
-offf
+print(offf)
 
 
 plt.figure(figsize=[10,8])
@@ -1017,12 +1021,12 @@ plt.show()
 
 offerevents2 = pd.crosstab(data8["offer_type"], data8["eventFinal"], normalize="index",  margins = True).fillna(0)*100
 offerevents2 = offerevents2.reset_index()
-offerevents2
+print(offerevents2)
 
 
 offerevents = pd.crosstab(data8["offer_type"], data8["eventFinal"], normalize="columns",  margins = True).fillna(0)*100
 offerevents = offerevents.reset_index()
-offerevents
+print(offerevents)
 
 # Plot the distribution
 fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(12,8), sharey=True)
@@ -1052,14 +1056,14 @@ plt.show()
 
 
 hh22 = pd.crosstab(data8["event"], data8["eventFinal"],  margins = True).fillna(0)
-hh22
+print(hh22)
 
-data8.eventFinal.value_counts()
+print(data8.eventFinal.value_counts())
 
-data8.groupby(['event']).groups.keys()
+print(data8.groupby(['event']).groups.keys())
 
 
-data8['event'].value_counts()
+print(data8['event'].value_counts())
 
 
 pd.crosstab(data8["offer_type"], data8["gender"],  margins = True).fillna(0)
@@ -1087,13 +1091,13 @@ ordering_combine = ['informational-No response','informational-offer viewed',
 t_combine = pd.CategoricalDtype(categories= ordering_combine, ordered=True)
 data8['combine'] = data8[['offer_type','eventFinal']].agg('-'.join, axis=1).astype(t_combine)
 
-data8['combine'].value_counts().index
+print(data8['combine'].value_counts().index)
 
 
 
 bbb_p = pd.crosstab(data8["combine"], data8["gender"], normalize="index", margins = True).fillna(0) * 100
 bbb_p = bbb_p.reset_index()
-bbb_p
+print(bbb_p)
 
 
 plt.figure(figsize=[14,8])
@@ -1109,7 +1113,7 @@ plt.title("Response to offer among Genders")
 plt.tight_layout()
 plt.show()
 
-bbb_p
+print(bbb_p)
 
 
 # ## Response rate among Age groups
@@ -1129,7 +1133,7 @@ plt.title("Response to offer among Age groups")
 plt.tight_layout()
 plt.show()
 
-age_cp
+print(age_cp)
 
 
 
@@ -1149,7 +1153,7 @@ plt.title("Response to offer among Income groups")
 plt.tight_layout()
 plt.show()
 
-income_cp
+print(income_cp)
 
 
 # 
@@ -1210,10 +1214,10 @@ def pre_modelling(dataset):
 X_train, X_test, y_train, y_test = pre_modelling(data8)
 
 
-X_train.head()
+print(X_train.head())
 
 
-y_test.head()
+print(y_test.head())
 
 
 
@@ -1297,15 +1301,15 @@ treemodel = build_model()
 treemodel.fit(X_train, y_train)
 
 
-X_test.columns
+print(X_test.columns)
 
 
-evaluate_model(treemodel, X_test, y_test)
+print(evaluate_model(treemodel, X_test, y_test))
 
-treemodel
+print(treemodel)
 
 
-treemodel.named_steps['rforest'].estimator.criterion
+print(treemodel.named_steps['rforest'].estimator.criterion)
 
 
 # let get the feature importance
@@ -1331,7 +1335,7 @@ perm = PermutationImportance(treemodel).fit(X_test, y_test)
 
 
 ee = dfform(perm.feature_importances_)
-ee
+print(ee)
 
 
 # Plot the distribution of offer response

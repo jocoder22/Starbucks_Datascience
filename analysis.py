@@ -468,7 +468,6 @@ data = clean_data[~clean_data['gender'].isna()]
 print(data.event.value_counts())
 
 print(data.info())
-
 print(data.person.nunique())
 
 
@@ -479,18 +478,12 @@ data = data.fillna({'reward': 99 ,'difficulty':99, 'offer_type':'No_offer',
 # data = data.fillna(0, inplace = True)
 
 print(data.info())
-
 print(data.head())
 
 
 
 print(data[data.event == "transaction"].tail())
-
-
 print(data.shape, data.person.nunique())
-
-
-
 print(data['gender'].value_counts())
 
 
@@ -536,7 +529,6 @@ offer_encoded = col_encoder(data, "offer_id")
 
 
 data.insert(1, 'user_id', person_encoded)
-
 data.insert(3 , 'offer_id2', offer_encoded)
 
 # show header
@@ -545,16 +537,11 @@ print(data.head())
 
 # calcuate number of unique members
 print(data.shape, data.person.nunique())
-
-
-
 # calcuate events
 print(data.event.value_counts())
 
 # Drop duplicates and get one record per user for further analysis
 data2 = data.drop_duplicates(subset=['person'])
-
-
 print(data2.shape)
 
 
@@ -670,11 +657,7 @@ plt.show()
 
 
 print(data2.head())
-
-
 print(data2.describe())
-
-
 print(data2.shape)
 
 # Create a histogram of income
@@ -865,7 +848,6 @@ def plot_dnorm(arr):
 
 # Distribution of users age is fairly normal, although the mean and median relatively close
 print(single_users.age.describe())
-
 print(single_users.agegroups.value_counts(normalize=True) * 100)
 
 

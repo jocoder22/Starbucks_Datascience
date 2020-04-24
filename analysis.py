@@ -885,9 +885,6 @@ print(data_age.agegroups.value_counts())
 # ## Analyze income
 # Distribution of users income is poorly normal, although the mean and median relatively close
 print(single_users.income.describe())
-
-
-
 bb = single_users.incomegroups.value_counts(normalize=True) * 100
 print(bb)
 
@@ -947,8 +944,6 @@ single_users['income'].plot.kde(legend=False, title="Histogram of all income")
 
 
 plot_dnorm(single_users["income"])
-
-
 data_income = single_users.query('income >= income.median()-2 and income <= income.mean()+2')
 print(data_income.incomegroups.value_counts())
 

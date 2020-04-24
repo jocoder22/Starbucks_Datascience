@@ -1059,28 +1059,18 @@ hh22 = pd.crosstab(data8["event"], data8["eventFinal"],  margins = True).fillna(
 print(hh22)
 
 print(data8.eventFinal.value_counts())
-
 print(data8.groupby(['event']).groups.keys())
-
-
 print(data8['event'].value_counts())
 
 
 pd.crosstab(data8["offer_type"], data8["gender"],  margins = True).fillna(0)
-
 pd.crosstab(data8["eventFinal"], data8["gender"], normalize="columns", margins = True).fillna(0) * 100
-
-
 pd.crosstab(data8["eventFinal"], data8["gender"], normalize="index", margins = True).fillna(0) * 100
 
 
 
 pd.crosstab(data8["offer_type"], data8["gender"], normalize="index", margins = True).fillna(0) * 100
-
-
 pd.crosstab(data8["offer_type"], data8["gender"], normalize="columns", margins = True).fillna(0) * 100
-
-
 yy9 = pd.crosstab(data8["eventFinal"], data8["incomegroups"], normalize="columns", margins = True).fillna(0) * 100
 yy9 = yy9.reset_index()
 

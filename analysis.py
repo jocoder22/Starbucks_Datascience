@@ -1215,8 +1215,6 @@ X_train, X_test, y_train, y_test = pre_modelling(data8)
 
 
 print(X_train.head())
-
-
 print(y_test.head())
 
 
@@ -1302,15 +1300,10 @@ treemodel.fit(X_train, y_train)
 
 
 print(X_test.columns)
-
-
 print(evaluate_model(treemodel, X_test, y_test))
 
 print(treemodel)
-
-
 print(treemodel.named_steps['rforest'].estimator.criterion)
-
 
 # let get the feature importance
 def dfform(lstt):

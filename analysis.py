@@ -117,19 +117,9 @@ exam_understand(profile)
 exam_understand(transcript)
 
 print(portfolio.info())
-
 print(portfolio.head())
-
-
-
 print(profile.head())
-
-
-
 print(transcript.head())
-
-
-
 print(transcript['event'].value_counts())
 
 

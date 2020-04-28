@@ -112,10 +112,7 @@ def exam_understand(dataset):
     print(dataset.info(), dataset.shape, **sp)
 
 
-
-
 exam_understand(portfolio)
-
 exam_understand(profile)
 exam_understand(transcript)
 

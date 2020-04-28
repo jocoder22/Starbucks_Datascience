@@ -54,7 +54,8 @@ The first task is to combine transaction, demographic and offer data to determin
     - `Scklearn`
     - `Seaborn`
     - 'elif`
-    
+  
+  
     
 ### Age groups
 - Elder Adults (over 70 years old)
@@ -62,6 +63,7 @@ The first task is to combine transaction, demographic and offer data to determin
 - Generation X (Roughly 35 – 50 years old)
 - Millennials, or Generation Y (18 – 34 years old)
 - Generation Z, or iGeneration (Teens & younger)
+
 
 ### Income groups
 - Lowest income less than 31,000

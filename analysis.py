@@ -58,8 +58,6 @@ import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
-
 from sklearn.pipeline import make_pipeline, Pipeline
 
 from sklearn.feature_extraction.text import CountVectorizer
@@ -73,14 +71,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import MaxAbsScaler
 
-
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 from sklearn.metrics import classification_report
 
-
 from eli5.sklearn import PermutationImportance
-
-
 bcolor = sns.color_palette()[0]
 blued = sns.color_palette("Blues_d")
 

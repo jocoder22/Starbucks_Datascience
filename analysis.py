@@ -331,7 +331,6 @@ def data_merger(data1, data22, data33):
     return data5
 
 
-
 clean_data = data_merger(transcript, profile, portfolio)
 print(clean_data.head())
 exam_understand(clean_data)
@@ -369,27 +368,17 @@ missing_income = clean_data[clean_data['income'].isna()]
 print(missing_income.event.value_counts())
 print(missing_income.shape, missing_income.person.nunique())
 
-
-
-
 # analyse missing gender among those missing income
 missing_income_gender = missing_income[missing_income['gender'].isna()]
 print(missing_income_gender.event.value_counts())
-
-
-
 
 missing_income_nodup = missing_income.drop_duplicates(subset=['person'])
 print(missing_income_nodup.shape)
 print(missing_income_nodup.event.value_counts())
 
-
-
-
 # analyse none missing gender among those missing income
 missing_income_gender_npg = missing_income[~missing_income['gender'].isna()]
 print(missing_income_gender_npg.shape)
-
 
 # analyse age amongst those missing gender and income
 print(missing_income.age.describe())
@@ -397,10 +386,6 @@ print(missing_income.age.describe())
 
 nullreward = clean_data[clean_data.reward.isnull()]
 print(nullreward.head())
-
-
-
-
 print(nullreward.info())
 print(nullreward.event.value_counts())
 

@@ -423,14 +423,9 @@ data = data.fillna({'reward': 99 ,'difficulty':99, 'offer_type':'No_offer',
 print(data.info())
 print(data.head())
 
-
-
 print(data[data.event == "transaction"].tail())
 print(data.shape, data.person.nunique())
 print(data['gender'].value_counts())
-
-
-
 
 def col_encoder(data, x):
     """The col_encoder function maps the long string column values to simple number string
@@ -497,7 +492,6 @@ print("\n\n\n\nlisting each gender Percentages :", genderclass_p, "\n\n\n\nlisti
       genderclass_count, sep="\n" )
 
 
-
 # Plot the gender class distribution
 plt.figure(figsize=[10,8])
 sns.barplot(x= genderclass_p.index, y = genderclass_p.values, color = bcolor, edgecolor="#2b2b28")
@@ -508,9 +502,6 @@ plt.ylabel("Percentage of members")
 plt.title("Starbucks Membership by Gender")
 plt.tight_layout()
 plt.show()
-    
-    
-
 
 # # Get listing percentage of events
 # Analyzing the distribution of events.
@@ -529,11 +520,8 @@ plt.title("Starbucks Event Distribution")
 plt.tight_layout()
 plt.show()
     
-
-
 # get data for offer events
 devent = data[data['event']!="transaction"].reset_index(drop=True)
-
 
 # sorted bar chart on ordinal categories
 # this method requires pandas v0.21 or later
@@ -543,19 +531,13 @@ t = pd.CategoricalDtype(categories= ordering_, ordered=True)
 devent["event"] = devent["event"].astype(t)
 print(devent.event.value_counts())
 
-
-
-
 # # Get listing percentage of offer events
 # Analyzing the distribution of offer events.
 offerevents_p = devent["event"].value_counts(normalize=True) * 100
 offerevents_count = devent["event"].value_counts() 
 print("\n\n\n\nOffer events Percentages :", offerevents_p, "\n\n\n\nOffer events Raw counts" , 
       offerevents_count, sep="\n" )
-
-
-
-  
+ 
 # Plot the distribution of offer events
 plt.figure(figsize=[10,8])
 sns.barplot(x = offerevents_p.index, y= offerevents_p.values,  color = bcolor,   edgecolor="#2b2b28")
@@ -565,16 +547,12 @@ plt.title("Starbucks Offer Events Distribution")
 plt.tight_layout()
 plt.show()
 
-
-
-
 # # get the counts of offer events across  and within gender
 hh = pd.crosstab(data2["event"], data2["gender"], normalize="index", margins = True).fillna(0) * 100
 hh2 = pd.crosstab(data2["event"], data2["gender"],  margins = True).fillna(0)
 hht = pd.crosstab(data2["event"], data2["gender"], normalize="all").fillna(0) * 100
 print("\n\n\n\noffer events across gender Percentages :", hh, " \n\n\n\noffer events across gender Raw counts" , hh2,
         " \n\n\n\nroom_types per bourough Raw counts", hht , sep="\n")
-
 
 # # Plot the distribution of offer within gender
 hh.plot.bar(stacked=True, cmap='Blues_r', figsize=(10,7), edgecolor=["#2b2b28", "#2b2b28", "#2b2b28"])
@@ -585,7 +563,6 @@ plt.xticks([0,1,2],['offer received','No offer', 'All Users'])
 plt.title("  Starbucks Offer Events Distribution")
 plt.tight_layout()
 plt.show()
-
 
 # RdBu_r, PuBu_r
 # # Plot the distribution of offer across gender
@@ -598,7 +575,6 @@ plt.title("  Starbucks Offer Events Distribution ")
 plt.tight_layout()
 plt.show()
 
-
 print(data2.head())
 print(data2.describe())
 print(data2.shape)
@@ -610,7 +586,6 @@ plt.title('Distribution of Income')
 plt.ylabel("Count")
 plt.xlabel('Income')
 plt.show()
-
 
 # Create a histogram of income among genders or only Males and females
 plt.figure(figsize=[11,8])
@@ -639,8 +614,6 @@ plt.title('Distribution of Age')
 plt.ylabel("Count")
 plt.xlabel('Age')
 plt.show()
-
-
 
 # Create a histogram of ages among genders for only Males and females
 plt.figure(figsize=[11,8])

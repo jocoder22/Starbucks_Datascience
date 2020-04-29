@@ -54,9 +54,7 @@ The first task is to combine transaction, demographic and offer data to determin
     - `Scklearn`
     - `Seaborn`
     - 'elif`
-  
-  
-    
+   
 ### Age groups
 - Elder Adults (over 70 years old)
 - Baby Boomers (Roughly 51 to 70 years old)
@@ -103,8 +101,10 @@ From this analysis is it reasonable to make the following conclusions:
 * Discount offers had the highest mobile app users response rate with a 30% viewing rate and a 62% completion rate. From a business and marketing perspective, these viewers should be marketed to complete the Discount offer.
 * Membership, income, and perceived rewards are the strongest inducers of response by these users. From a business and marketing perspective, Starbucks customers should encourage to sign up for the mobile app.
 
+
 ## Github repository 
 Github repository at this [link](https://github.com/jocoder22/Starbucks_Datascience)
+
 
 ## blog post 
 See blog post at this [link](https://medium.com/@okigbookey/starbucks-data-scientist-a9455d67a1cc) 

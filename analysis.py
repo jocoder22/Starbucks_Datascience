@@ -662,20 +662,14 @@ plt.title('Correlation Heatmap - All Users')
 plt.yticks(rotation=0)
 plt.show()
 
-
-
 men = data2[data2['gender'] == 'M']
 ladies = data2[data2['gender'] == 'F']
-
-
 
 plt.figure(figsize=[11,8])
 sns.heatmap(ladies[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
 plt.title('Correlation Heatmap - Female Users')
 plt.yticks(rotation=0)
 plt.show()
-
-
 
 plt.figure(figsize=[11,8])
 sns.heatmap(men[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)
@@ -702,8 +696,6 @@ print(single_users.person.nunique(), single_users.shape)
 # the gender with most users is typical
 print(single_users.gender.value_counts(normalize=True) * 100)
 
-
-
 fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(14,8), sharey=True)
 plt.subplot(121)
 
@@ -723,7 +715,6 @@ plt.xlabel('income')
 plt.legend()
 plt.show()
 
-
 # ## Analyze age
 # visual Normality check
 def plot_dnorm(arr):
@@ -742,13 +733,9 @@ def plot_dnorm(arr):
 
     plt.show()
 
-
-
 # Distribution of users age is fairly normal, although the mean and median relatively close
 print(single_users.age.describe())
 print(single_users.agegroups.value_counts(normalize=True) * 100)
-
-
 
 # Density Plot and Histogram of all age
 plt.figure(figsize=[10,8])
@@ -757,10 +744,8 @@ single_users['age'].plot.hist(density=True, color = 'darkblue',
 single_users['age'].plot.kde(legend=False, title="Histogram of all age")
 plt.show()
 
-
 data_age = single_users.query('age >= age.mean()-2 and age <= age.median()+2')
 print(data_age.agegroups.value_counts())
-
 
 # ## Analyze income
 # Distribution of users income is poorly normal, although the mean and median relatively close
@@ -828,8 +813,6 @@ data_income = single_users.query('income >= income.median()-2 and income <= inco
 print(data_income.incomegroups.value_counts())
 
 
-
-
 #  # Question II
 #  ## Which demographic group respond best to which offer type?
 #   - Analyzing the response rate of each gender and age groups.
@@ -838,8 +821,6 @@ oevent = ['offer received', 'offer viewed', 'offer completed']
 ooffer = ['informational', 'discount', 'bogo']
 toevent = pd.api.types.CategoricalDtype(categories= oevent, ordered=True)
 tooffer = pd.api.types.CategoricalDtype(categories= ooffer, ordered=True)
-
-
 
 # keep only users that received an offer
 dada = data[data['event'] != "transaction"]

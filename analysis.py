@@ -1016,7 +1016,7 @@ plt.tight_layout()
 plt.show()
 
 
-def pre_modelling(dataset):
+def pre_modelling(dataset, split):
     """The pre_modelling function select necessary features and split the  dataset
         into training and testing datasets
  
@@ -1024,7 +1024,11 @@ def pre_modelling(dataset):
         dataset(DataFrame) : the data to split
         split(float) : the test sample ration
         
-        
+     Output:
+        X_test:
+        X_train:
+        Y_test:
+        Y_train:
     
     
     """
@@ -1048,7 +1052,7 @@ def pre_modelling(dataset):
     y["offer viewed"] = y.apply(lambda x: x[2] if x[2] == 1 else x[1], axis=1)
     
     X_train, X_test, Y_train, Y_test = train_test_split(
-                        data.iloc[:,:-4], y, test_size=0.2, stratify=data.iloc[:,-1], random_state=0)
+                        data.iloc[:,:-4], y, test_size=split, stratify=data.iloc[:,-1], random_state=0)
 
     
     return X_train, X_test, Y_train, Y_test

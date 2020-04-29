@@ -1017,8 +1017,14 @@ plt.show()
 
 
 def pre_modelling(dataset):
-    """
-    
+    """The pre_modelling function select necessary features and split the  dataset
+        into training and testing datasets
+ 
+    Input:
+        dataset(DataFrame) : the data to split
+        split(float) : the test sample ration
+        
+        
     
     
     """

@@ -1124,8 +1124,6 @@ def evaluate_model(model, X_text, Y_test):
     print(f'{accuracy}\n\n')
     print(f"Model Accuracy score: {accuracyscore}\n\n")
 
-
-
 treemodel = build_model()
 treemodel.fit(X_train, y_train)
 

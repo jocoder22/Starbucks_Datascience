@@ -79,6 +79,7 @@ The first task is to combine transaction, demographic and offer data to determin
     - Python script with codes used in this project
     
  
+ 
  ## Analysis questions
  Following the CRISP-DM process this project will find solutions to the following questions
  
@@ -93,6 +94,7 @@ The first task is to combine transaction, demographic and offer data to determin
 * Question III
   - Who will response to an offer? 
     - Build a model that predicts whether or not someone will respond to an offer.
+
 
 
 ## Conclusion

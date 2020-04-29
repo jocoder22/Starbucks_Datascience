@@ -7,18 +7,22 @@
 Cross-Industry Standard Process of Data Mining - (CRISP-DM)
 A. Bussiness Understanding                 
     1. Formulate research/analysis question(s)
+    
 B. Data Understanding
     1. Seek for relevant datasets
     2. Read/Download relevant datasets
+    
 C. Data preparation
     1. Examine and understand the datasets
     2. Clean and join datasets
     3. Features extraction and engineering
     4. Exploratory and explanatory data analysis
     5. Data visualization
+    
 D. Predictive modeling and answers to research question
     1. Tackle reseach questions
     2. Supervised learning
+    
 E. Deployment
     1. Summary report
     2. Conclusion(s)

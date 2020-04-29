@@ -231,9 +231,6 @@ def profile_cleaner(dat):
     
     return profile2
     
-    
-
-
 
 def clean_portfolio(datapp):
     """The clean_portfolio function will do data cleaning and wrangling of the portfolio data 
@@ -405,8 +402,6 @@ print(nullreward.event.value_counts())
 # ## 3b. Working with complete, non-missing dataset
 
 
-
-
 data = clean_data[~clean_data['gender'].isna()]
 print(data.event.value_counts())
 
@@ -508,7 +503,6 @@ plt.show()
 event_p = data["event"].value_counts(normalize=True) * 100
 event_counts = data["event"].value_counts() 
 print("\n\n\n\nlisting each event Percentages :", event_p, "\n\n\n\nlisting each event Raw counts" , event_counts, sep="\n" )
-
 
   
 # Plot the event distribution

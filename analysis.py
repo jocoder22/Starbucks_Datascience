@@ -335,7 +335,6 @@ print(clean_data.shape)
 print(clean_data.agegroups.value_counts())
 
 
-# 
 # **profile.json**
 # * age (int) - age of the customer 
 # * became_member_on (int) - date when customer created an app account
@@ -388,7 +387,6 @@ print(nullreward.event.value_counts())
 
 
 # ## insights
-# 
 # - From the analysis above, members missing gender data also had missing income data.
 # - Looking carefully at the age for members with missing gender and income data, the mean, max, median, 25% and 75% percentiles are the same, 118 years with standard deviation of 0.0. Therefore,
 #      - Apart from the age of 118 years being questionable; all 2172 user had the same age, 118 years.
@@ -619,8 +617,6 @@ plt.ylabel("Count")
 plt.legend()
 plt.show()
 
-
-
 # Create a boxplot of ages among genders 
 plt.figure(figsize=[11,8])
 sns.boxplot(x="gender", y="age", data=data2, color = bcolor)
@@ -631,8 +627,6 @@ plt.xlabel("Gender")
 plt.legend()
 plt.show()
 
-
-
 # Create a histogram of membership Days
 plt.figure(figsize=[10,8])
 plt.hist(data2['membershipDays'], bins=20)
@@ -640,8 +634,6 @@ plt.title('Distribution of Membership Days')
 plt.ylabel("Number of Users")
 plt.xlabel('Number of Days')
 plt.show()
-
-
 
 # Create a histogram of membership Days among genders or only Males and females
 plt.figure(figsize=[11,8])
@@ -653,8 +645,6 @@ plt.xlabel('Number of Days')
 plt.legend()
 plt.show()
 
-
-
 # Create a boxplot of membership Days among genders 
 plt.figure(figsize=[11,8])
 sns.boxplot(x="gender", y="membershipDays", data=data2, color = bcolor)
@@ -665,8 +655,6 @@ plt.ylabel("Number of Users")
 plt.xlabel('Number of Days')
 plt.legend()
 plt.show()
-
-
 
 plt.figure(figsize=[11,8])
 sns.heatmap(data2[["age", "income", "membershipDays"]].corr(), annot=True, cbar=False)

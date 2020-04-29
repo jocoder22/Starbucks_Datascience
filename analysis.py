@@ -1054,7 +1054,6 @@ print(X_train.head())
 print(y_test.head())
 
 
-
 # search for best estimator
 category_names = y_train.columns.tolist()
 estimators = [
@@ -1084,8 +1083,6 @@ for name, estimator in estimators:
     print(f"Model Accuracy score: {accuracyscore}\n\n")
 
 
-
-
 def build_model():
     """The build_model function build a model pipeline
     Args: None
@@ -1101,8 +1098,6 @@ def build_model():
 
 
     return plu
-
-
 
 
 def evaluate_model(model, X_text, Y_test):
@@ -1161,8 +1156,6 @@ def dfform(lstt):
 # important feature affecting prices using eli5 permutation
 perm = PermutationImportance(treemodel).fit(X_test, y_test)
 
-
-
 ee = dfform(perm.feature_importances_)
 print(ee)
 
@@ -1180,8 +1173,6 @@ sns.barplot(x = ee.features, y= ee.coefficients,  color = bcolor, linewidth = 2,
                                                                                            "#2b2b28", "#2b2b28","#2b2b28", "#2b2b28", "#2b2b28", 
                                                                                            "#2b2b28", "#2b2b28", "#2b2b28", 
                                                                                           "#2b2b28"])
-
-
 
 plt.xlabel(" ")
 plt.axhline(y=0.00, color='black', linestyle='-')

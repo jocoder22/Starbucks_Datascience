@@ -874,7 +874,6 @@ plt.tight_layout()
 plt.show()
 
 
-
 offerevents2 = pd.crosstab(data8["offer_type"], data8["eventFinal"], normalize="index",  margins = True).fillna(0)*100
 offerevents2 = offerevents2.reset_index()
 print(offerevents2)
@@ -909,8 +908,6 @@ plt.legend(title="Users Response")
 plt.tight_layout()
 plt.show()
 
-
-
 hh22 = pd.crosstab(data8["event"], data8["eventFinal"],  margins = True).fillna(0)
 print(hh22)
 
@@ -918,12 +915,9 @@ print(data8.eventFinal.value_counts())
 print(data8.groupby(['event']).groups.keys())
 print(data8['event'].value_counts())
 
-
 pd.crosstab(data8["offer_type"], data8["gender"],  margins = True).fillna(0)
 pd.crosstab(data8["eventFinal"], data8["gender"], normalize="columns", margins = True).fillna(0) * 100
 pd.crosstab(data8["eventFinal"], data8["gender"], normalize="index", margins = True).fillna(0) * 100
-
-
 
 pd.crosstab(data8["offer_type"], data8["gender"], normalize="index", margins = True).fillna(0) * 100
 pd.crosstab(data8["offer_type"], data8["gender"], normalize="columns", margins = True).fillna(0) * 100
@@ -938,8 +932,6 @@ t_combine = pd.CategoricalDtype(categories= ordering_combine, ordered=True)
 data8['combine'] = data8[['offer_type','eventFinal']].agg('-'.join, axis=1).astype(t_combine)
 
 print(data8['combine'].value_counts().index)
-
-
 
 bbb_p = pd.crosstab(data8["combine"], data8["gender"], normalize="index", margins = True).fillna(0) * 100
 bbb_p = bbb_p.reset_index()
@@ -1001,8 +993,6 @@ plt.show()
 
 print(income_cp)
 
-
-# 
 # # Question III
 # ## Who will response to an offer?
 # - Build machine learning model that predicts whether or not someone will respond to an offer.

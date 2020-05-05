@@ -40,12 +40,13 @@
 #                 Who will response to an offer?
 #                         Build machine learning model that predicts whether or not someone will respond to an offer.
 
+
 # # B. Data Understanding
 #     1. Seek for relevant datasets
 #     2. Read/Download relevant datasets
 
-# ### import modules and libraries
 
+# ### import modules and libraries
 
 import numpy as np
 import pandas as pd

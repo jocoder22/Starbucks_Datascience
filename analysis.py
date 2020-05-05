@@ -4,7 +4,6 @@
 # # Starbucks Capstone Challenge
 
 # # Analysis PLan 
-# 
 # Cross-Industry Standard Process of Data Mining - (CRISP-DM)
 # 
 # A. Bussiness Understanding                 

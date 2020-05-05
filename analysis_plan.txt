@@ -5,7 +5,8 @@
             Data Science Nanodegree
                   Udacity
                   
-                  
+  
+  
 Cross-Industry Standard Process of Data Mining - (CRISP-DM)
 A. Bussiness Understanding                 
     1. Formulate research/analysis question(s)

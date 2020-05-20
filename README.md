@@ -56,6 +56,7 @@ The first task is to combine transaction, demographic and offer data to determin
     - 'elif`
  
  
+ 
 ### Age groups
 - Elder Adults (over 70 years old)
 - Baby Boomers (Roughly 51 to 70 years old)
